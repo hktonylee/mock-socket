@@ -47,7 +47,7 @@ class WebSocket extends EventTarget {
         configurable: true,
         enumerable: true,
         get() {
-          return this.listeners.open;
+          return this.listeners.open[0];
         },
         set(listener) {
           this.addEventListener('open', listener);
@@ -57,7 +57,7 @@ class WebSocket extends EventTarget {
         configurable: true,
         enumerable: true,
         get() {
-          return this.listeners.message;
+          return this.listeners.message[0];
         },
         set(listener) {
           this.addEventListener('message', listener);
@@ -67,7 +67,7 @@ class WebSocket extends EventTarget {
         configurable: true,
         enumerable: true,
         get() {
-          return this.listeners.close;
+          return this.listeners.close[0];
         },
         set(listener) {
           this.addEventListener('close', listener);
@@ -77,7 +77,7 @@ class WebSocket extends EventTarget {
         configurable: true,
         enumerable: true,
         get() {
-          return this.listeners.error;
+          return this.listeners.error[0];
         },
         set(listener) {
           this.addEventListener('error', listener);
